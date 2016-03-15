@@ -20,11 +20,11 @@
 		var matrix;
 		var x;
 		var y;
-		var current = this.filter('.selected');
+		var current = this.filter('.active');
 		var keyNavigationDisabled=false;
 		if (current.length == 0) current = this.first();
 
-		current.addClass('selected');
+		current.addClass('active');
 
 		function update() {
 			var i=0;
@@ -34,8 +34,8 @@
 			var m=Array();
 
 			elements.each(function(){
-				if (!oldtop) oldtop = this.offsetTop;
-				newtop=this.offsetTop;
+				if (!oldtop) oldtop = $(this).offset().top;
+				newtop=$(this).offset().top;
 				if (newtop != oldtop) {
 					oldtop=newtop;
 					m[i]=row;
@@ -81,9 +81,9 @@
 			if (i>=matrix.length) i=0;
 			if (j<0) j=(matrix[i].length-1);
 			if (j>=matrix[i].length) j=0;
-			current.removeClass('selected');
+			current.removeClass('active');
 			current = $(matrix[i][j]);
-			current.addClass('selected');
+			current.addClass('active');
 			x=i;
 			y=j;
 		}
