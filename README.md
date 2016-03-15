@@ -9,7 +9,7 @@ This plugin allows you to navigate a set of links layed out in a matrix from key
     [ item ] [ item ] [ item ] [ item ]
     [ item ] [ item ]
 
-The rows should have the same vertical offset. You can mark one element with `.selected` class, or the first one will be selected.
+The rows should have the same vertical offset. You can mark one element with `.active` class, or the first one will be selected.
 
 Enter key replaces `window.location.href` with the current `href` value.
 
